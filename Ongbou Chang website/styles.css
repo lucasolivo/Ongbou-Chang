@@ -240,6 +240,21 @@
     -moz-text-fill-color: transparent;
 }
 
+.section {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 2rem;
+}
+
+.section-img {
+    width: 300px; /* or adjust based on your layout */
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+
 .main__content p {
     margin-top: 1rem;
     font-size: 1.5rem;
@@ -309,6 +324,20 @@
         margin: 0 auto;
         min-height: 100vh;
     }
+
+@media (max-width: 768px) {
+    .section {
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+    }
+
+    .section-img {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
 
 .main__content {
     text-align: center;
@@ -386,25 +415,32 @@
     height: 525px;
     width: 400px;
     border-radius: 4px;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, 
-    rgba(17, 17, 17, 0.6) 100%), 
-    url("images/Lotha_Naga_girl.jpg");
     background-size: cover;
+    background-position: center;
     position: relative;
     color: #fff;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, 
+    rgba(17, 17, 17, 0.6) 100%);
 }
 
-.services__card:nth-child(2) {
+.women-card {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, 
-    rgba(17, 17, 17, 0.6) 100%), 
+    rgba(17, 17, 17, 0.6) 100%),
+    url("images/Lotha_Naga_girl.jpg");
+}
+
+.youth-card {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, 
+    rgba(17, 17, 17, 0.6) 100%),
     url("images/naga_kids.jpg");
 }
 
-.services__card:nth-child(3) {
+.merch-card {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, 
-    rgba(17, 17, 17, 0.6) 100%), 
+    rgba(17, 17, 17, 0.6) 100%),
     url("images/OngbouChangBiography.jpg");
 }
+
 
 .services h2 {
     position: absolute;
@@ -429,6 +465,19 @@
     top: 475px;
     left: 30px;
     font-size: 1rem;
+    cursor: pointer;
+}
+
+.services__card-link {
+    text-decoration: none;
+}
+
+.services__card-link .services__card {
+    transition: transform 0.2s ease-in;
+}
+
+.services__card-link:hover .services__card {
+    transform: scale(1.075);
     cursor: pointer;
 }
 
