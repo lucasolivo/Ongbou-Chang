@@ -571,3 +571,238 @@
     margin-bottom: 1.5rem;
     color: #141414;
 }
+
+
+/* Modal background */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.6);
+}
+
+/* Modal content box */
+.modal-content {
+  background-color: #fff;
+  margin: auto;
+  padding: 2rem;
+  border: 1px solid #888;
+  width: 400px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.modal-content h2 {
+  margin-bottom: 1rem;
+}
+
+.modal-content input {
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.modal-content button {
+  background-color: #830908;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.modal-content .close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+}
+
+/* Merchandise CSS */
+
+.title {
+    background-color: #fff;
+}
+
+.title > .title { /* Nested container */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-self: center;
+    margin: 0 auto;
+    min-height: 100vh;
+    width: 100%;
+    max-width: 1300px;
+     margin-top: -80px;
+}
+
+.title__content h1 {
+    text-align: center;
+    font-size: 3rem;
+    background-color: #830908;
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+.title__content h2 {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+    background-color: #141414;
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+.title__img--container {
+    display: flex;
+    justify-content: flex-end; /* Push image to the right */
+    align-items: center;
+    width: 100%;
+}
+
+#title__img {
+    width: 90%;
+    max-width: 700px; /* Adjust size as needed */
+    height: auto;
+}
+
+/* Products CSS */
+
+.products {
+  padding: 0rem 2rem;
+  background-color: #fff;
+  text-align: center;
+}
+
+.products__header h2 {
+  font-size: 2.5rem;
+  color: #830908;
+  margin-bottom: 0.5rem;
+}
+
+.products__header p {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.products__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.product-card {
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+  width: 100%;
+  max-width: 300px;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.product-title {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #830908;
+}
+
+.product-links {
+  margin-top: 0.3rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.product-links a {
+  font-size: 0.95rem;
+  color: #0073e6;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom 0.2s;
+}
+
+.product-links a:hover {
+  border-bottom: 1px solid #0073e6;
+}
+
+.store-logo {
+  height: 20px;
+  width: auto;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  
+  /* Title Section */
+  .title > .title {
+    margin-top: 20px;
+    grid-template-columns: 1fr;  /* Stack text and image vertically */
+    min-height: auto;             /* Let height adjust naturally */
+    padding: 1rem 1.5rem;
+  }
+  
+  .title__content {
+    text-align: center;           /* Center text on mobile */
+    margin-bottom: 1.5rem;
+  }
+
+  .title__img--container {
+    justify-content: center;      /* Center image horizontally */
+  }
+
+  #title__img {
+    max-width: 90vw;              /* Responsive width */
+    height: auto;
+  }
+
+  /* Products Section */
+  .products__grid {
+    grid-template-columns: 1fr;   /* Stack product cards vertically */
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+  
+  .product-card {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .product-links {
+    justify-content: center;      /* Center purchase links */
+  }
+}
