@@ -262,6 +262,16 @@
     border-radius: 8px;
 }
 
+.memorial-img {
+  display: block;
+  margin: 10px auto 0;
+  width: 60%;
+  max-width: 500px;
+  max-height: 230px;   /* limit the height */
+  object-fit: cover;   /* crops image nicely instead of squishing */
+  border-radius: 8px;
+}
+
 
 .main__content p {
     margin-top: 1rem;
@@ -814,4 +824,62 @@
   .product-links {
     justify-content: center;      /* Center purchase links */
   }
+}
+
+/* Youth section */
+
+.hero {
+  position: relative;
+  height: 60vh; /* or whatever height you like */
+  width: 60%;   /* make it narrower */
+  margin: 0 auto; /* center it horizontally */
+  margin-top: 1rem;
+  background: url("images/Wide_shot_school.jpg") no-repeat center center/cover;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  border-radius: 15px; /* optional, gives nice rounded corners */
+  overflow: hidden;    /* keeps background inside the radius */
+}
+
+
+.hero__overlay {
+  padding: 20px 40px;
+  margin-top: 20px; /* push down from very top */
+  border-radius: 10px;
+}
+
+.hero__overlay h1 {
+  color: #fff;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Exposition Section */
+.exposition {
+  padding: 60px 20px;          /* breathing room around content */
+}
+
+.exposition__container {
+  max-width: 1200px;            /* keeps text from going too wide */
+  margin: 0 auto;              /* centers the container */
+  margin-top: 1rem;
+  line-height: 1.7;            /* improves readability */
+  color: #333;                 /* dark gray instead of pure black */
+}
+
+.exposition__container p {
+  margin-bottom: 1.5rem;       /* space between paragraphs */
+  font-size: 1.5rem;           /* slightly larger text */
+  text-align: justify;         /* neat, newspaper-style look */
+}
+
+/*Women section*/
+.women_main__container h1 {
+  color: #830908;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 1rem;
 }
