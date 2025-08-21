@@ -99,6 +99,7 @@
     border-radius: 4px;
     background: #f77062;
     color: #fff;
+    font-weight: bold;
 }
 
 /*Hover transitions for sign up and the other links*/
@@ -143,7 +144,7 @@
     opacity: 1;
     transition: all 0.5s ease;
     z-index: 99;
-    height: 50vh;
+    height: 63vh;
     font-size: 1.6rem;
 }
 
@@ -186,7 +187,7 @@
     justify-content: center;
     align-items: center;
     width: 80%;
-    height: 80px;
+    height: 70px;
     margin: 0;
 }
 
@@ -281,7 +282,8 @@
 }
 
 .main__btn {
-    font-size: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
     background-image: linear-gradient(to top, #830908 0%, #830908 100%);
     padding: 14px 32px;
     border: none;
@@ -415,7 +417,7 @@
         #830908 100%);
     background-size: 100%;
     margin-bottom: 5rem;
-    font-size: 2.5rem;
+    font-size: 4rem;
     -webkit-background-clip: text;
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -444,7 +446,7 @@
 .women-card {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, 
     rgba(17, 17, 17, 0.6) 100%),
-    url("images/Lotha_Naga_girl.jpg");
+    url("images/OngbouWomen.jpg");
 }
 
 .youth-card {
@@ -464,6 +466,7 @@
     position: absolute;
     top: 425px;
     left: 30px;
+    font-size: 1.2rem;
 }
 
 .services__card p {
@@ -830,30 +833,68 @@
 
 .hero {
   position: relative;
-  height: 60vh; /* or whatever height you like */
-  width: 60%;   /* make it narrower */
-  margin: 0 auto; /* center it horizontally */
-  margin-top: 1rem;
+  aspect-ratio: 1 / 1;   /* keeps it square */
+  width: 50%;            /* set width, height follows automatically */
+  margin: 1rem auto 0;   /* center + top margin */
   background: url("images/Wide_shot_school.jpg") no-repeat center center/cover;
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  border-radius: 15px; /* optional, gives nice rounded corners */
-  overflow: hidden;    /* keeps background inside the radius */
+  border-radius: 15px;
+  overflow: hidden;
 }
 
+.hero__title {
+  color: #830908;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
 
+/*
 .hero__overlay {
   padding: 20px 40px;
-  margin-top: 20px; /* push down from very top */
+  margin-top: 10px; 
   border-radius: 10px;
 }
 
 .hero__overlay h1 {
-  color: #fff;
+  color: #000;
   font-size: 3rem;
   font-weight: bold;
   text-align: center;
+}
+*/
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .hero {
+    width: 70%;   /* narrower on mobile */
+  }
+
+  .hero__title {
+    font-size: 1.8rem; /* smaller text */
+  }
+}
+
+/* image section */
+
+.schoolImages {
+    display: flex;
+    justify-content: center;
+    gap: 6rem;
+    margin-top: 0rem;
+    flex-wrap: wrap;
+}
+
+.schoolImages img {
+    aspect-ratio: 1 / 1;
+    max-width: 35%;
+    height: auto;
+    flex: 1 1 45%;
+    border-radius: 8px;
 }
 
 /* Exposition Section */
@@ -875,11 +916,148 @@
   text-align: justify;         /* neat, newspaper-style look */
 }
 
+/* Arial images: 4:3 side by side */
+.arial-images {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin: 2rem 0;
+  flex-wrap: wrap; /* allows stacking on smaller screens */
+}
+
+.arial-images img {
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  max-width: 400px;  /* adjust size */
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Kids images: 1:1 aspect ratio, side by side */
+.kids-images {
+  display: flex;
+  justify-content: center;
+  gap: 8rem;
+  margin: 2rem 0;
+}
+
+.kids-images img {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  max-width: 300px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+
+  /* Arial images on mobile */
+  .arial-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;            /* tighter gap for small screens */
+    width: 100%;
+    flex-wrap: nowrap;    /* keep them in one row */
+  }
+
+  .arial-images img {
+    flex: 1 1 50%;        /* each image takes half the row */
+    max-width: 50%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+
+  /* Kids images on mobile */
+  .kids-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    flex-wrap: nowrap;
+  }
+
+  .kids-images img {
+    flex: 1 1 50%;        /* each image takes half the row */
+    max-width: 50%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+
+  /* school images on mobile */
+
+  .schoolImages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    flex-wrap: nowrap;
+  }
+
+  .schoolImages img {
+    flex: 1 1 50%;        /* each image takes half the row */
+    max-width: 45%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+}
+
 /*Women section*/
+/*
+.women_main {
+  position: relative;
+  height: 60vh; 
+  width: 60%;  
+  margin: 0 auto; 
+  margin-top: 1rem;
+  background: url("images/Woman.jpg") no-repeat center center/cover;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  border-radius: 15px; 
+  overflow: hidden;   
+}
+*/
+
 .women_main__container h1 {
   color: #830908;
   font-size: 3rem;
   font-weight: bold;
   text-align: center;
   margin-top: 1rem;
+}
+
+.women_main__images {
+  display: flex;              /* put images in a row */
+  justify-content: center;    /* center them horizontally */
+  gap: 6rem;                  /* spacing between the images */
+  margin-top: 2rem;
+  flex-wrap: wrap;            /* allow wrapping on smaller screens */
+}
+
+.women_main__images img {
+  flex: 1 1 45%;              /* each image takes ~45% of container */
+  max-width: 27%;            /* make sure they shrink properly */
+  aspect-ratio: 1 / 1;
+  height: auto;               /* keep aspect ratio */
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+
+    .women_main__container h1 {
+        font-size: 2.4rem;
+    }
+
+    .women_main__images {
+        gap: 3rem;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .women_main__images img {
+        width: 100%;
+    }
+
 }
